@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "gsm-shop-app-1d53a": {
+      "hosting": {
+        "gsm-shop-app": [
+          "gsm-shop-app-1d53a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "gsm-shop-app-1d53a"
+  }
+}

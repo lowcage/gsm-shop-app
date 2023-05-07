@@ -1,0 +1,13 @@
+<!--<div>
+  <select (change)="reloadBrand()" [(ngModel)] = "chosenBrand">
+    <option *ngFor="let brand of brandList" [ngValue]="brand">{{brand}}</option>
+  </select>
+</div>-->
+
+<div>
+  <mat-form-field>
+    <mat-select (selectionChange)="reloadBrand()" [(ngModel)] = "chosenBrand">
+      <mat-option *ngFor="let brand of brandList" [value]="brand">{{brand}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

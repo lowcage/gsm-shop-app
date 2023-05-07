@@ -1,0 +1,80 @@
+.phone-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.phone-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  background-color: grey;
+  padding: 1em;
+}
+
+.phone-image-container {
+  margin-right: 1em;
+}
+
+.phone-image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.phone-details-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.phone-name {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.phone-details-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5em;
+  cursor: pointer;
+}
+
+.phone-details-title {
+  font-weight: bold;
+  margin-left: 0.5em;
+}
+
+.phone-details-content {
+  margin-top: 0.5em;
+}
+
+.phone-details-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+.phone-details-label {
+  font-weight: bold;
+  margin-right: 1em;
+  width: 150px;
+}
+
+.username-field {
+  width: 200px;
+  margin-right: 1em;
+}
+
+.amount-field {
+  width: 100px;
+}
+
+.purchase-button-container {
+  margin-top: 0.5em;
+}
+
+.purchase-button {
+  margin-right: 1em;
+}

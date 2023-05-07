@@ -1,0 +1,92 @@
+<div class="phone-list-container">
+  <div *ngFor="let phone of phonesInput" class="phone-container">
+    <div class="phone-image-container">
+      <img [src]="loadedImages[phone.id]" class="phone-image">
+    </div>
+    <div class="phone-details-container">
+      <div class="phone-name">{{phone.brand_name}} {{phone.model_name}}</div>
+      <div class="phone-details-header" (click)="phone.expanded = !phone.expanded">
+        <mat-icon>{{phone.expanded ? 'keyboard_arrow_down' : 'keyboard_arrow_right'}}</mat-icon>
+        <div class="phone-details-title">Details</div>
+      </div>
+      <div class="phone-details-content" *ngIf="phone.expanded">
+        <div class="phone-details-row">
+          <div class="phone-details-label">Dimensions:</div>
+          <div class="phone-details-value">{{phone.body.dimensions}}</div>
+        </div>
+        <div class="phone-details-row">
+          <div class="phone-details-label">Weight:</div>
+          <div class="phone-details-value">{{phone.body.weight}}</div>
+        </div>
+        <div class="phone-details-row">
+          <div class="phone-details-label">Display Type:</div>
+          <div class="phone-details-value">{{phone.display.type}}</div>
+        </div>
+        <div class="phone-details-row">
+          <div class="phone-details-label">Display Size:</div>
+          <div class="phone-details-value">{{phone.display.size}}</div>
+        </div>
+        <div class="phone-details-row">
+          <div class="phone-details-label">OS:</div>
+          <div class="phone-details-value">{{phone.platform.os}}</div>
+        </div>
+        <div class="phone-details-row">
+          <div class="phone-details-label">Chipset:</div>
+          <div class="phone-details-value">{{phone.platform.chipset}}</div>
+        </div>
+        <div class="phone-details-row">
+          <div class="phone-details-label">CPU:</div>
+          <div class="phone-details-value">{{phone.platform.cpu}}</div>
+        </div>
+        <div class="phone-details-row">
+          <div class="phone-details-label">GPU:</div>
+          <div class="phone-details-value">{{phone.platform.gpu}}</div>
+        </div>
+        <div class="phone-details-row">
+          <div class="phone-details-label">Memory:</div>
+          <div class="phone-details-value">{{phone.memory}}</div>
+        </div>
+        <div class="phone-details-row">
+          <div class="phone-details-label">Battery:</div>
+          <div class="phone-details-value">{{phone.battery}}</div>
+        </div>
+        <div class="phone-details-row">
+          <div class="phone-details-label">Price:</div>
+          <div class="phone-details-value">{{phone.price | currency:'USD':'symbol'}}</div>
+        </div>
+      </div>
+      <form [formGroup]="purchasesForm" (ngSubmit)="addPurchase(phone.id)">
+        <mat-form-field class="username-field">
+          <label for="username">Username:</label>
+          <input matInput type="text" formControlName="username"/>
+        </mat-form-field>
+        <mat-form-field class="amount-field">
+          <label for="amount">Amount:</label>
+          <input matInput type="text" formControlName="amount"/>
+        </mat-form-field>
+        <div class="purchase-button-container">
+          <button mat-raised-button class="purchase-button" type="submit">PURCHASE</button>
+        </div>
+      </form>
+    </div>
+
+
+
+
+<!--   <div *ngIf="purchases.length !== 0">
+    <table>
+      <tr>
+        <th>User</th>
+        <th>Model</th>
+        <th>Amount</th>
+        <th>Date</th>
+      </tr>
+      <tr *ngFor="let purchase of purchases">
+        <td>{{purchase.username}}</td>
+        <td>{{purchase.phone_id}}</td>
+        <td>{{purchase.amount}}</td>
+        <td>{{purchase.date | dateFormat}}</td>
+      </tr>
+    </table>
+  </div> -->
+

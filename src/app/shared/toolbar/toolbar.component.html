@@ -1,0 +1,26 @@
+<mat-nav-list>
+  <a mat-list-item routerLink="/home" (click)="close()"><mat-icon>grid_view</mat-icon> <span>Home</span></a>
+
+
+  <a mat-list-item routerLink="/phones" (click)="close()"><mat-icon>phone</mat-icon> <span>Phones</span></a>
+
+  <a mat-list-item routerLink="/about-us" (click)="close()"><mat-icon>info</mat-icon> <span>About Us</span></a>
+
+  <a mat-list-item routerLink="/login" (click)="close()" *ngIf="!(loggedInUser)"><mat-icon>login</mat-icon> <span>Login</span></a>
+
+  <a mat-list-item routerLink="/login" (click)="close(true)" *ngIf="loggedInUser"><mat-icon>logout</mat-icon> <span>Logout</span></a>
+
+
+  <a mat-list-item routerLink="/signup" (click)="close()" *ngIf="!(loggedInUser)"><mat-icon>app_registration</mat-icon> <span>Sign Up!</span></a>
+</mat-nav-list>
+
+
+
+
+<!--<select [(ngModel)]="currentPage" (change)="toolbarSwitch()">
+  <option value="home">Home</option>
+  <option value="phones">Phones</option>
+  <option value="about-us">About Us</option>
+  <option value="login">Login</option>
+  <option value="signup">Sign up!</option>
+</select> -->
